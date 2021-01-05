@@ -8,7 +8,7 @@ Ideas:
 - Sign language
 
 ## Team members:
-Ananya
-Anish
-Rehaan
-Raggav
+- Ananya
+- Anish
+- Rehaan
+- Raggav
