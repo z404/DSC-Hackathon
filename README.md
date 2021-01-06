@@ -6,6 +6,8 @@ Ideas:
 - Covid vaccine
 - PA system for deaf
 - Sign language
+- Traffic Signal
+- Farm implementation
 
 ## Team members:
 - Ananya
