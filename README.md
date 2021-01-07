@@ -2,7 +2,7 @@
 Ice-breaker hackathon by DSC-VIT
 
 Ideas:
-- Shopping cart
+- ~~Shopping cart~~
 - Covid vaccine
 - PA system for deaf
 - Sign language
