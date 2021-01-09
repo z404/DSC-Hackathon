@@ -1,16 +1,5 @@
-# DSC-Hackathon
-Ice-breaker hackathon by DSC-VIT
+# Stocker
+### Ice-breaker hackathon by DSC-VIT
 
-Ideas:
-- ~~Shopping cart~~
-- Covid vaccine
-- PA system for deaf
-- Sign language
-- Traffic Signal
-- Farm implementation
-
-## Team members:
-- Ananya
-- Anish
-- Rehaan
-- Raggav
+##### Abstract
+Stocker is a stock price predictor. It can be used for educational purposes to help people comprehend how the stock market functions. 
