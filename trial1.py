@@ -9,16 +9,21 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
+from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 
+#{4: 3071, 3: 1453, 1: 88, 2: 148}
 #converting all columns to numberss
 dataset = pd.read_csv('train.csv', low_memory=False)
 le = preprocessing.LabelEncoder()
 for i in dataset.columns:
     if dataset[i].dtype == 'object' or dataset[i].dtype == 'bool':
         dataset[i] = le.fit_transform(dataset[i])
-
+print({a:list(dataset['importance']).count(a) for a in list(dataset['importance'])})
 #splitting train and test
-labels_to_be_dropped = []#,'decisiondate']
+print(set(dataset['issue.25']),dataset['issue.25'].dtype)
+labels_to_be_dropped = ['appno','country.name','introductiondate','itemid','judgementdate','kpdate'\
+                        ,'paragraphs=12']
 features = [i for i in dataset.columns if i not in labels_to_be_dropped]
 dataset = dataset[features]
 
@@ -26,21 +31,40 @@ dataset.to_csv('Processed.csv')
 y = dataset['importance']
 X = dataset.drop('importance',1)
 
-X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_size = 0.25)
-
-print(X_train.shape,y_train.shape)
-
+mxdpth = 5
+features = 6
+rs = 0
 
 #clf = LogisticRegression(C=4, penalty='l2', verbose=5)             #74.81%
 #clf = DecisionTreeClassifier()                                     #84.52%
-clf =  RandomForestClassifier(max_depth=30,max_features=30)        #89.09%
-#clf = KNeighborsClassifier(13)                                     #70.56%
-clf.fit(X_train, y_train)
-accuracy = clf.score(X_test, y_test)
-print(accuracy)
+clf =  RandomForestClassifier(max_depth=mxdpth,max_features=features,random_state=rs)        #89.09%
+string = str(clf)+' '+str(labels_to_be_dropped)
+#clf = KNeighborsClassifier(23)                                     #70.56%
+#clf = SVC()
+#clf = QuadraticDiscriminantAnalysis()
+#clf.fit(X_train, y_train)
+#accuracy = clf.score(X_test, y_test)
+#print(accuracy)
 
-##dataset = pd.read_csv('train.csv', low_memory=False)
-##le = preprocessing.LabelEncoder()
-##for i in dataset.columns:
-##    if dataset[i].dtype == 'object' or dataset[i].dtype == 'bool':
-##        dataset[i] = le.fit_transform(dataset[i])
+clf.fit(X,y)
+
+dataset2 = pd.read_csv('test.csv', low_memory=False)
+k = dataset2['appno'].copy()
+k = list(k)
+le = preprocessing.LabelEncoder()
+for i in dataset2.columns:
+    if dataset2[i].dtype == 'object' or dataset2[i].dtype == 'bool':
+        dataset2[i] = le.fit_transform(dataset2[i])
+dataset2[dataset2==np.inf]=np.nan
+features = [i for i in dataset2.columns if i not in labels_to_be_dropped]
+dataset2 = dataset2[features]
+dataset2.fillna(0,inplace=True)
+a = clf.predict(dataset2)
+output = pd.DataFrame({'importance':a,'appno':k})
+output.set_index('appno',inplace=True)
+print({a:list(output['importance']).count(a) for a in list(output['importance'])})
+output.to_csv('submit.csv')
+print(output.head())
+with open('log.txt','a+') as file:
+    accuracy = input('Enter the accuracy achieved')
+    file.write('\n'+string+' '+accuracy)
