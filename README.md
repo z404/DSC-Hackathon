@@ -1,4 +1,4 @@
-# Grievance Resolution using ML
+# Grievances' Importance Prediction using ML
 ### DSC-VIT Ice-breaker hackathon by Ius Humanum
 
 ##### Abstract
