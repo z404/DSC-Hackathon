@@ -22,8 +22,15 @@ for i in dataset.columns:
 print({a:list(dataset['importance']).count(a) for a in list(dataset['importance'])})
 #splitting train and test
 print(set(dataset['issue.25']),dataset['issue.25'].dtype)
-labels_to_be_dropped = ['appno','country.name','introductiondate','itemid','judgementdate','kpdate'\
-                        ,'paragraphs=12']
+
+#--------------------------------------------------------------------------------------
+labels_to_be_dropped = ['appno', 'itemid', 'application', 'country.name']
+mxdpth = 6
+fea = 5
+n_est = 600
+rs = 100
+#--------------------------------------------------------------------------------------
+
 features = [i for i in dataset.columns if i not in labels_to_be_dropped]
 dataset = dataset[features]
 
@@ -31,14 +38,12 @@ dataset.to_csv('Processed.csv')
 y = dataset['importance']
 X = dataset.drop('importance',1)
 
-mxdpth = 5
-features = 6
-rs = 0
 
-#clf = LogisticRegression(C=4, penalty='l2', verbose=5)             #74.81%
-#clf = DecisionTreeClassifier()                                     #84.52%
-clf =  RandomForestClassifier(max_depth=mxdpth,max_features=features,random_state=rs)        #89.09%
-string = str(clf)+' '+str(labels_to_be_dropped)
+
+#clf = LogisticRegression(C=5, penalty='l2', verbose=5)             #74.81%
+#clf = DecisionTreeClassifier(max_depth=75)                                     #84.52%
+clf =  RandomForestClassifier(max_depth=mxdpth,max_features=fea,random_state=rs,n_estimators=n_est)        #89.09%
+string = str(clf).replace('\t','').replace('\n','').replace('                       ',' ')+' '+str(labels_to_be_dropped)
 #clf = KNeighborsClassifier(23)                                     #70.56%
 #clf = SVC()
 #clf = QuadraticDiscriminantAnalysis()
@@ -65,6 +70,8 @@ output.set_index('appno',inplace=True)
 print({a:list(output['importance']).count(a) for a in list(output['importance'])})
 output.to_csv('submit.csv')
 print(output.head())
+print(string)
 with open('log.txt','a+') as file:
     accuracy = input('Enter the accuracy achieved')
     file.write('\n'+string+' '+accuracy)
+

@@ -1,1 +1,69 @@
 RandomForestClassifier(max_depth=5, max_features=6, random_state=0) ['appno', 'country.name', 'introductiondate', 'itemid', 'judgementdate', 'kpdate', 'paragraphs=12'] 77.02390 
+RandomForestClassifier(max_depth=5, max_features=6, random_state=0) [] 73.92850
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=0) [] 75.83080
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=0) ['appno'] 73.03870
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=0) ['appno', 'itemid'] 78.08550
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=0) ['itemid'] 74.24880
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=0) ['appno', 'itemid', 'country.name'] 76.61650
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=0) ['appno', 'itemid', 'country.name', 'country.alpha2'] 75.64180
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=0) ['appno', 'country.name', 'country.alpha2'] 73.59710
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=0) ['appno', 'itemid', 'country.alpha2'] 77.01880
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=1) ['appno', 'itemid', 'country.alpha2'] 78.38620
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=2) ['appno', 'itemid', 'country.alpha2'] 78.80180
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=3) ['appno', 'itemid', 'country.alpha2'] 75.83890
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=2) ['appno', 'itemid', 'country.alpha2', 'respondent.0', 'respondent.1'] 74.84480
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=0) ['appno', 'itemid', 'country.alpha2', 'respondent.0', 'respondent.1'] 74.01730
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=0) ['appno', 'itemid', 'country.alpha2', 'respondent.0'] 73.18570
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=1) ['appno', 'itemid', 'country.alpha2', 'respondent.0'] 75.28870
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=1) ['appno', 'itemid', 'country.alpha2', 'docname'] 72.49470
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=2) ['appno', 'itemid', 'country.alpha2', 'docname'] 75.50730
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=3) ['appno', 'itemid', 'country.alpha2', 'docname'] 75.30130
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=2) ['appno', 'itemid', 'country.alpha2', 'ecli'] 74.22860
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=1) ['appno', 'itemid', 'country.alpha2', 'ecli'] 71.83110
+RandomForestClassifier(max_depth=6, max_features=4, n_estimators=200, random_state=1) ['appno', 'itemid', 'country.alpha2', 'ecli'] 74.09470
+RandomForestClassifier(max_depth=6, max_features=4, n_estimators=200, random_state=1) ['appno', 'itemid', 'country.alpha2'] 75.07920
+RandomForestClassifier(max_depth=6, max_features=4, n_estimators=250, random_state=2) ['appno', 'itemid', 'country.alpha2'] 75.74070
+RandomForestClassifier(max_depth=5, max_features=4, n_estimators=250, random_state=2) ['appno', 'itemid', 'country.alpha2'] 70.89520
+RandomForestClassifier(max_depth=5, max_features=4, n_estimators=200, random_state=2) ['appno', 'itemid', 'country.alpha2'] 72.48670
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=2) ['appno', 'itemid', 'country.alpha2'] 78.80180
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=2) ['appno', 'itemid', 'ecli'] 78.46830
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=1) ['appno', 'itemid', 'ecli'] 78.07340
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=0) ['appno', 'itemid', 'ecli'] 74.53710
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=2) ['appno', 'itemid', 'ecli', 'application'] 75.06110
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=0) ['appno', 'itemid', 'ecli', 'application'] 76.37590
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=1) ['appno', 'itemid', 'ecli', 'application'] 71.37630
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=1) ['appno', 'itemid', 'ecli', 'application', 'docname'] 77.35750
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=0) ['appno', 'itemid', 'ecli', 'application', 'docname'] 74.37550
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=2) ['appno', 'itemid', 'ecli', 'application', 'docname'] 75.74360
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=2) ['appno', 'itemid', 'ecli', 'docname'] 76.31440
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=1) ['appno', 'itemid', 'ecli', 'docname'] 71.63140
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=0) ['appno', 'itemid', 'ecli', 'decisiondate'] 76.11330
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=0) ['appno', 'itemid', 'ecli', 'decisiondate', 'kpdate', 'judgementdate'] 75.91470
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=69) ['appno', 'itemid', 'ecli', 'decisiondate', 'kpdate', 'judgementdate'] 75.63020
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=69) ['appno', 'itemid', 'ecli']  75.70380 
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=69) ['appno', 'itemid', 'ecli', 'country.alpha2', 'country.name'] 76.36690
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=200, random_state=2) ['appno', 'itemid', 'ecli', 'country.name'] 75.09410
+RandomForestClassifier(max_depth=5, max_features=6, n_estimators=3200, random_state=2) ['appno', 'itemid', 'ecli', 'country.name'] 76.34710
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=600, random_state=2) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 73.27050
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=600, random_state=100) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 78.98470
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=590, random_state=100) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 78.74030
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=595, random_state=100) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 78.83360
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=605, random_state=100) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 78.77110
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=592, random_state=100) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 78.86740
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=591, random_state=100) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 78.90300
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=589, random_state=100) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 78.60490
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=585, random_state=79) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 78.85290
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=582, random_state=79) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 79.02970
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=575, random_state=79) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 79.10140
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=550, random_state=79) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 79.22190
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=520, random_state=79) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type']  79.35670 
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=510, random_state=79) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 79.24500
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=515, random_state=79) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 79.22160
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=525, random_state=79) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 79.27100
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=523, random_state=79) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 79.41480
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=522, random_state=79) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 79.43540
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=524, random_state=79) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 79.46770
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=440, random_state=79) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 79.44030
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=430, random_state=79) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 79.47820
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=428, random_state=79) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type'] 79.45990
+RandomForestClassifier(max_depth=6, max_features=5, n_estimators=431, random_state=79) ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type']  79.42250 
