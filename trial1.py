@@ -24,11 +24,11 @@ print({a:list(dataset['importance']).count(a) for a in list(dataset['importance'
 print(set(dataset['issue.25']),dataset['issue.25'].dtype)
 
 #--------------------------------------------------------------------------------------
-labels_to_be_dropped = ['appno', 'itemid', 'application', 'country.name', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type']
-mxdpth = 6
-fea = 5
-n_est = 299
-rs = 100
+labels_to_be_dropped = ['appno', 'itemid', 'application', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type']
+mxdpth = 6 #increasing decreses the number of 4s
+fea = 5 #increasing reduces sensitivity
+n_est = 100
+rs = 1024
 #--------------------------------------------------------------------------------------
 
 features = [i for i in dataset.columns if i not in labels_to_be_dropped]
