@@ -21,14 +21,17 @@ for i in dataset.columns:
         dataset[i] = le.fit_transform(dataset[i])
 print({a:list(dataset['importance']).count(a) for a in list(dataset['importance'])})
 #splitting train and test
-print(set(dataset['issue.25']),dataset['issue.25'].dtype)
+
 
 #--------------------------------------------------------------------------------------
-labels_to_be_dropped = ['appno', 'itemid', 'application', 'respondent.0', 'respondent.1', 'respondentOrderEng', 'respondent.3', 'respondent.4', 'kpdate', 'introductiondate', 'originatingbody_type']
-mxdpth = 6 #increasing decreses the number of 4s
-fea = 5 #increasing reduces sensitivity
-n_est = 100
-rs = 1024
+labels_to_be_dropped = ['appno','application','country.alpha2','country.name','docname','ecli','itemid','languageisocode','originatingbody_name','originatingbody_type',\
+                        'parties.0','parties.2','parties.1','respondent.0','respondent.1','respondent.2','respondent.3','respondent.4','respondentOrderEng','sharepointid','documentcollectionid=CASELAW',\
+                        'documentcollectionid=JUDGMENTS','documentcollectionid=ENG','documentcollectionid=CHAMBER','documentcollectionid=COMMITTEE','documentcollectionid=GRANDCHAMBER'\
+                        ]
+mxdpth = 5 #increasing decreses the number of 4s
+fea = 4 #increasing reduces sensitivity
+n_est = 250
+rs = 85
 #--------------------------------------------------------------------------------------
 
 features = [i for i in dataset.columns if i not in labels_to_be_dropped]

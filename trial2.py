@@ -1,63 +1,69 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as pl
-from sklearn import preprocessing, model_selection
-import os
-import copy
+from lightgbm import LGBMClassifier
+from sklearn.model_selection import GridSearchCV 
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_predict
+from sklearn.metrics import accuracy_score
 
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
-from sklearn.neighbors import KNeighborsClassifier
+target_col = 'importance'
 
-#{4: 3071, 3: 1453, 1: 88, 2: 148}
+combined_train = combined.query('label == "train"').drop(['issues', 'label'] , axis=1)
+# split test and train
+X_train, X_test, Y_train, Y_test = \
+    train_test_split(combined_train.drop([target_col], axis=1), 
+                     combined_train[target_col], 
+                     test_size=0.2, 
+                     stratify=combined_train[target_col])
+print(len(X_train),' samples in training data\n',
+      len(X_test),' samples in test data\n', )
 
-#converting all columns to numberss
-dataset = pd.read_csv('train.csv', low_memory=False)
-le = preprocessing.LabelEncoder()
-for i in dataset.columns:
-    if dataset[i].dtype == 'object' or dataset[i].dtype == 'bool':
-        dataset[i] = le.fit_transform(dataset[i])
-print({a:list(dataset['importance']).count(a) for a in list(dataset['importance'])})
-#splitting train and test
-print(set(dataset['issue.25']),dataset['issue.25'].dtype)
-labels_to_be_dropped = ['appno','itemid','application','country.name','respondent.0','respondent.1','respondentOrderEng','respondent.3','respondent.4','kpdate','introductiondate','originatingbody_type']
-features = [i for i in dataset.columns if i not in labels_to_be_dropped]
-dataset = dataset[features]
+clf_dict = {"LGBM Classifier": 
+            {'classifier': LGBMClassifier(),
+                 'params': [
+                            {
+                             'learning_rate': [0.01, 0.1, 1.0],
+                             'n_estimators' :[10, 50, 500, 1000],
+                             'max_depth':[5, 3,7],
+                             'max_features' : [3, 5, 7, 11]
+                            }
+                           ]
+            },
+           }
 
-dataset.to_csv('Processed.csv')
-y = dataset['importance']
-X = dataset.drop('importance',1)
+res_df  = pd.DataFrame()
+num_clf = len(clf_dict.keys())
+res_df = pd.DataFrame(
+    data=np.zeros(shape=(num_clf, 3)),
+    columns = ['classifier',
+                   'train_score', 
+                   'test_score',
+            ]
+)
 
+count = 0
+for key, clf in clf_dict.items():
+    print(key, clf)
 
+    grid = GridSearchCV(clf["classifier"],
+                        clf["params"],
+                        refit=True,
+                        cv=10,
+                        scoring = 'accuracy',
+                        n_jobs = -1,
+                        verbose=0
+                        
+                       )
+    estimator = grid.fit(
+                        X_train,
+                        Y_train)
+    train_score = estimator.score(X_train,
+                                      Y_train)
+    test_score = estimator.score(X_test,
+                                 Y_test)
+    count+=1
+    
+    res_df.loc[count,'classifier'] = key
+    res_df.loc[count,'train_score'] = train_score
+    res_df.loc[count,'test_score'] = test_score
+    print(f"{key} best params: {grid.best_params_}")
+res_df.iloc[1:, :]
 
-#clf = LogisticRegression(C=2, penalty='none', verbose=5)             #74.81%
-#clf = DecisionTreeClassifier()                                     #84.52%
-clf =  RandomForestClassifier(max_depth=6,max_features=5,n_estimators=600)        #89.09%
-#clf = KNeighborsClassifier(21)                                     #70.56%
-#clf.fit(X_train, y_train)
-#accuracy = clf.score(X_test, y_test)
-#print(accuracy)
-
-clf.fit(X,y)
-
-dataset2 = pd.read_csv('test.csv', low_memory=False)
-print(set(dataset2['issue.25']),dataset2['issue.25'].dtype)
-k = dataset2['appno'].copy()
-k = list(k)
-le = preprocessing.LabelEncoder()
-for i in dataset2.columns:
-    if dataset2[i].dtype == 'object' or dataset2[i].dtype == 'bool':
-        dataset2[i] = le.fit_transform(dataset2[i])
-dataset2[dataset2==np.inf]=np.nan
-features = [i for i in dataset2.columns if i not in labels_to_be_dropped]
-dataset2 = dataset2[features]
-dataset2.fillna(0,inplace=True)
-print(set(dataset2['issue.25']),dataset2['issue.25'].dtype)
-a = clf.predict(dataset2)
-print(k)
-output = pd.DataFrame({'importance':a,'appno':k})
-output.set_index('appno',inplace=True)
-print({a:list(output['importance']).count(a) for a in list(output['importance'])})
-output.to_csv('submit.csv')
-print(output.head())
