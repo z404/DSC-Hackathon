@@ -13,4 +13,4 @@ This idea was inspired by the [HackerEarth Machine Learning Challenge: Resolving
 
 ##### The Dataset
 The dataset has 328 columns, and is downloadable from kaggle. The label is the column called importance, and rest are features. The test set has 327 columns.
-At present, we're considering this problem to be a classification problem and using Random Forest Classifier to train the model. We're able to get a max accuracy on the test set of 79.9%
+At present, we're considering this problem to be a classification problem and using Random Forest Classifier to train the model. We're able to get a max accuracy on the test set of 88.062%
