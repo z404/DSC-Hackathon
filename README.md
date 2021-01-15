@@ -47,9 +47,9 @@ The generated csv is uploaded to the website, and an accuracy score is shown. Th
 We have managed to obtain a score of 88.23390%, which has, as of now, managed to get us to the 21st spot on the leaderboard, out of 1432 participants.
 
 ### References
-[Label encoding from strings to integers](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)
-[Random Forest and LightGBM](https://datascience.stackexchange.com/questions/63322/random-forest-vs-lightgbm)
-[Light GBM Docs](https://lightgbm.readthedocs.io/en/latest/)
-[Grid Search CV Docs](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)
-[Light GBM Hyperparameter Tweaking](https://towardsdatascience.com/understanding-lightgbm-parameters-and-how-to-tune-them-6764e20c6e5b)
-Google Colab Notebook
+- [Label encoding from strings to integers](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)
+- [Random Forest and LightGBM](https://datascience.stackexchange.com/questions/63322/random-forest-vs-lightgbm)
+- [Light GBM Docs](https://lightgbm.readthedocs.io/en/latest/)
+- [Grid Search CV Docs](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)
+- [Light GBM Hyperparameter Tweaking](https://towardsdatascience.com/understanding-lightgbm-parameters-and-how-to-tune-them-6764e20c6e5b)
+- Google Colab Notebook
