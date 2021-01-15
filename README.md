@@ -33,3 +33,10 @@ All country names were converted to single letters, as to "universalize" the cou
 Columns with constant values (only one unique value) were also dropped. Finally, columns ```['parties.0', 'country.alpha2', 'parties.1', 'country.name', 'docname', 'appno', 'ecli', 'kpdate', 'originatingbody_name']``` were all dropped, as they did not provide any useful information or data that wasn't already present in the dataset, or had no corelation with the importance of the claim.
 
 Now that the preprocessing was over, the dataset was ready for machine learning to be applied on it.
+
+#### Step 3: Training the model
+To start choosing the model, we first need to decide weather the problem requires the model to be a regressive model or a classification problem. As the ```importance``` column in the train set has discreet values from 1 to 4, classification is the best approach to this. On doing research, we shortlisted 3 models for training our model. ```Light GBM```, ```Random Forest Classifier``` and ```Decition Tree Classifier```. We utilized the Grid Search CV tool from scikit learn's model selection library, to run multiple algorithms on the dataset and achieve the best efficiency and accuracy, and figured out that ```Light GBM``` was providing the best results for the given hyperparameters.
+
+After the Grid search CV is done choosing the best possible choice, we run a cross-validation test on the model and the dataset. This is important, as it shows how your model fares on many segments of the dataset, and gives you an average cross validation score, which comes very close to the actual accuracy that can be achieved on the test set.
+
+Finally, the model is run on the test set, and the prediction is saved to a csv.
