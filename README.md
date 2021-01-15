@@ -40,3 +40,16 @@ To start choosing the model, we first need to decide weather the problem require
 After the Grid search CV is done choosing the best possible choice, we run a cross-validation test on the model and the dataset. This is important, as it shows how your model fares on many segments of the dataset, and gives you an average cross validation score, which comes very close to the actual accuracy that can be achieved on the test set.
 
 Finally, the model is run on the test set, and the prediction is saved to a csv.
+
+#### Step 4: Uploading to HackerEarth 
+The generated csv is uploaded to the website, and an accuracy score is shown. This score is not the exact accuracy, as, according to thier instructions: ```Your output will be evaluated only for 50% of the test data while the contest is running. Once the contest is over, output for the remaining 50% of the data will be evaluated and the final rank will be awarded.```
+
+We have managed to obtain a score of 88.23390%, which has, as of now, managed to get us to the 21st spot on the leaderboard, out of 1432 participants.
+
+### References
+[Label encoding from strings to integers](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html)
+[Random Forest and LightGBM](https://datascience.stackexchange.com/questions/63322/random-forest-vs-lightgbm)
+[Light GBM Docs](https://lightgbm.readthedocs.io/en/latest/)
+[Grid Search CV Docs](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)
+[Light GBM Hyperparameter Tweaking](https://towardsdatascience.com/understanding-lightgbm-parameters-and-how-to-tune-them-6764e20c6e5b)
+Google Colab Notebook
