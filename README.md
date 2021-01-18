@@ -53,3 +53,5 @@ We have managed to obtain a score of 88.23390%, which has, as of now, managed to
 - [Grid Search CV Docs](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)
 - [Light GBM Hyperparameter Tweaking](https://towardsdatascience.com/understanding-lightgbm-parameters-and-how-to-tune-them-6764e20c6e5b)
 - Google Colab Notebook
+
+This was an amazing ice breaker experience, and we made a lot of friends and inside jokes on the way, and we thank DSC-VIT for the opportunity to take part in this hackathon
